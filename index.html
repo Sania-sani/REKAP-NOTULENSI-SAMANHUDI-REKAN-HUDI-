@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notulensi Rapat</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f9fafb; }
+    h1 { text-align: center; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    textarea { width: 100%; height: 150px; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; }
+    button { padding: 10px 20px; border: none; background: #2563eb; color: white; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #1e40af; }
+    .output { margin-top: 20px; padding: 15px; border-radius: 10px; background: #f1f5f9; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📑 Notulensi Rapat</h1>
+    <label for="agenda">Agenda Rapat:</label>
+    <textarea id="agenda" placeholder="Tulis agenda rapat..."></textarea>
+
+    <label for="hasil">Hasil Diskusi:</label>
+    <textarea id="hasil" placeholder="Tulis hasil diskusi..."></textarea>
+
+    <label for="tindaklanjut">Tindak Lanjut:</label>
+    <textarea id="tindaklanjut" placeholder="Tulis tindak lanjut..."></textarea>
+
+    <button onclick="generateNotulensi()">Buat Notulensi</button>
+
+    <div class="output" id="output"></div>
+  </div>
+
+  <script>
+    function generateNotulensi() {
+      const agenda = document.getElementById('agenda').value;
+      const hasil = document.getElementById('hasil').value;
+      const tindak = document.getElementById('tindaklanjut').value;
+
+      document.getElementById('output').innerHTML = `
+        <h2>Notulensi Rapat</h2>
+        <p><strong>Agenda:</strong> ${agenda}</p>
+        <p><strong>Hasil Diskusi:</strong> ${hasil}</p>
+        <p><strong>Tindak Lanjut:</strong> ${tindak}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
